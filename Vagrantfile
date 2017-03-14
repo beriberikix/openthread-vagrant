@@ -25,9 +25,9 @@ Vagrant.configure("2") do |config|
     sudo apt-get update -qq
 
     # wpandtund runtime & build requirements
-    sudo apt-get install -y build-essential git make autoconf automake dbus \
-                            libtool gcc g++ gperf flex bison texinfo gawk \
-                            ncurses-dev libexpat-dev python sed python-pip \
+    sudo apt-get install -y build-essential git make autoconf autoconf-archive \
+                            automake dbus libtool gcc g++ gperf flex bison texinfo \
+                            ncurses-dev libexpat-dev python sed python-pip gawk \
                             libreadline6-dev libreadline6 libdbus-1-dev libboost-dev
     sudo apt-get install -y --force-yes gcc-arm-none-eabi
 
@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
     sudo git checkout full/master
     ./bootstrap.sh
     ./configure --sysconfdir=/etc
-    Make
+    make
     sudo make install
 
     # install OpenThread
