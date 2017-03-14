@@ -42,7 +42,6 @@ Vagrant.configure("2") do |config|
     git clone --recursive https://github.com/openthread/wpantund.git
     cd wpantund
     sudo git checkout full/master
-    ./bootstrap.sh
     ./configure --sysconfdir=/etc
     make
     sudo make install
