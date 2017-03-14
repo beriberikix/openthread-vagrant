@@ -46,6 +46,8 @@ Vagrant.configure("2") do |config|
     ./configure --sysconfdir=/etc
     make
     sudo make install
+    # dbus sometimes is wonky; forcing restart
+    sudo service dbus restart
 
     # install OpenThread
     cd ~/src
